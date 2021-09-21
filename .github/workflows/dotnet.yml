@@ -25,7 +25,7 @@ jobs:
       working-directory: ./Homework1/Homework1
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: ./Homework1/Homework1Tests/UnitTest1.cs
+      working-directory: ./Homework1/Homework1Tests
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with: 
