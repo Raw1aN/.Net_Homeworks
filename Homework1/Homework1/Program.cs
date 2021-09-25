@@ -17,7 +17,7 @@ namespace Homework1
             {
                 return parseResult;
             }
-
+            
             var result = Calculator.Calculate(operation, val1, val2);
 
             Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");

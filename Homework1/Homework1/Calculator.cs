@@ -1,4 +1,6 @@
-﻿namespace Homework1
+﻿using System;
+
+namespace Homework1
 {
     public static class Calculator
     {
