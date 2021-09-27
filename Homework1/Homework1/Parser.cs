@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace Homework1
 {
-    static internal class Parser
+    public static class Parser
     {
-        private static readonly string[] SupportedOperations = {
+        public static readonly string[] SupportedOperations = {
             "+",
             "-",
             "*",
@@ -21,7 +21,7 @@ namespace Homework1
             if (args.Length != 3)
             {
                 Console.WriteLine($"Wrong args length");
-                return 5;
+                return 3;
             }
             if (!isVal1Int || !isVal2Int)
             {

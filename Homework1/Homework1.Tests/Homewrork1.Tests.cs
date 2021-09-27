@@ -54,7 +54,7 @@ namespace Homework1Tests
         {
             var args = new[] {"10", "/", "10", "10"};
             var result = Program.Main(args);
-            Assert.IsTrue(result == 5);
+            Assert.IsTrue(result == 3);
         }
         
         [TestMethod]
