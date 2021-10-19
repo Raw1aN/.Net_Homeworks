@@ -1,20 +1,16 @@
 module Homework4.Program
 
 open System
-
-// Define a function to construct a message to print
-
-
-let WrongOperationFormat = 3
+open Homework4.Operation
+open Homework4.Parser
+open Homework4.Calculator
 
 
 [<EntryPoint>]
 let main argv =
-    let mutable val1 = 1
-    let mutable val2 = 2
-    let mutable operation = "+"
-    
-    if  Parser.TryParseOperation operation  = false then WrongOperationFormat
-    else
-    printf $"Result is: {Calculator.Calculate operation val1 val2}"
+    let mutable arg1 = 0
+    let mutable arg2 = 0
+    let mutable operation = Operation.None
+    let arg1,operation,arg2 = Parser.Parse argv
+    let result= Calculator.Calculate arg1 operation arg2
     0

@@ -7,9 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Operation.fs" />
         <Compile Include="Calculator.fs" />
         <Compile Include="Parser.fs" />
         <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\omework4Tests\omework4Tests.fsproj" />
     </ItemGroup>
 
 </Project>
