@@ -2,9 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Giraffe", "Giraffe\Giraffe.fsproj", "{28012855-C735-4F33-AE69-1FC5EC09A2D9}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.fsproj", "{D88C25C2-3F50-42EF-BA2C-A72BB20A6055}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{6E221897-2922-4B8A-8FAD-525D8F40305F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{DF1C580D-DE5C-4CBB-9434-FC7BF2D1C037}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +14,9 @@ Global
 		{28012855-C735-4F33-AE69-1FC5EC09A2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28012855-C735-4F33-AE69-1FC5EC09A2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28012855-C735-4F33-AE69-1FC5EC09A2D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D88C25C2-3F50-42EF-BA2C-A72BB20A6055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D88C25C2-3F50-42EF-BA2C-A72BB20A6055}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D88C25C2-3F50-42EF-BA2C-A72BB20A6055}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D88C25C2-3F50-42EF-BA2C-A72BB20A6055}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E221897-2922-4B8A-8FAD-525D8F40305F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E221897-2922-4B8A-8FAD-525D8F40305F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E221897-2922-4B8A-8FAD-525D8F40305F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E221897-2922-4B8A-8FAD-525D8F40305F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1C580D-DE5C-4CBB-9434-FC7BF2D1C037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1C580D-DE5C-4CBB-9434-FC7BF2D1C037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1C580D-DE5C-4CBB-9434-FC7BF2D1C037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1C580D-DE5C-4CBB-9434-FC7BF2D1C037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

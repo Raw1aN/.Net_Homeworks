@@ -9,6 +9,8 @@ open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
+open Giraffe.MaybeBuilder
+open Giraffe.Input
 
 // ---------------------------------
 // Models
@@ -64,13 +66,17 @@ type Values =
     }    
 let someHttpHandler:HttpHandler =
             fun next ctx ->
-                let values = ctx.TryBindQueryString<Values>()
-                match values with
+                let res = maybeBuilder{
+                    let! read = ctx.TryBindQueryString<Input>()
+                    let! operation = Parser.Parse read
+                    let result = Calculator.Calculate read.v1 operation read.v2
+                    return result
+                }
+                match res with
                 | Ok v ->
-                    (setStatusCode 200 >=> json (v.v1+v.v2)) next ctx
-                | Error v->
+                    (setStatusCode 200 >=> json v) next ctx 
+                | Error v ->
                     (setStatusCode 400 >=> json v) next ctx
-                next ctx
     
 
 let webApp =
@@ -79,7 +85,7 @@ let webApp =
             choose [
                 route "/" >=> indexHandler "world"
                 routef "/hello/%s" indexHandler
-                route "/add" >=> someHttpHandler 
+                route "/calc" >=> someHttpHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]
 
@@ -124,6 +130,19 @@ let configureLogging (builder : ILoggingBuilder) =
     builder.AddConsole()
            .AddDebug() |> ignore
 
+type Startup() =
+    member _.ConfigureServices (services : IServiceCollection) =
+        // Register default Giraffe dependencies
+        services.AddGiraffe() |> ignore
+
+    member _.Configure (app : IApplicationBuilder)
+                        (_ : IHostEnvironment)
+                        (_ : ILoggerFactory) =
+        // Add Giraffe to the ASP.NET Core pipeline
+        app.UseGiraffe webApp
+
+        
+        
 [<EntryPoint>]
 let main args =
     let contentRoot = Directory.GetCurrentDirectory()
@@ -141,3 +160,4 @@ let main args =
         .Build()
         .Run()
     0
+    

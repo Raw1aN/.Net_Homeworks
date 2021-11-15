@@ -11,9 +11,16 @@
         <PackageReference Include="Giraffe" Version="5.0.0-rc-6" />
         <PackageReference Include="Giraffe.ViewEngine" Version="1.3.*" />
         <PackageReference Include="Ply" Version="0.3.*" />
+        <PackageReference Include="System.Net.Http" Version="4.3.4" />
     </ItemGroup>
 
     <ItemGroup>
+        <Compile Include="ErrorTypes.fs" />
+        <Compile Include="MaybeBuilder.fs" />
+        <Compile Include="Operation.fs" />
+        <Compile Include="Calculator.fs" />
+        <Compile Include="Input.fs" />
+        <Compile Include="Parser.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
