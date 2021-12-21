@@ -70,13 +70,16 @@ namespace Classwork_26._10._21.Controllers
             }
         }
     }
-    public class CalculatorVisitor : ExpressionVisitor
+    public class CalculatorVisitor
     {
-        protected override Expression VisitBinary(BinaryExpression node)
+        public Expression Visit(Expression expression) => Visit((dynamic) expression);
+        public Expression Visit(ConstantExpression constant) => constant;
+        public Expression Visit(BinaryExpression node)
         {
+            Task.Delay(1000);
             var first = Task.Run(() => Visit(node.Left));
             var second = Task.Run(() => Visit(node.Right));
-            Task.Delay(1000).GetAwaiter().GetResult();
+            
             Task.WhenAll(first, second);
 
             var firstResult =(ConstantExpression) first.Result;
