@@ -1,0 +1,13 @@
+﻿
+@using WebApplication.Models
+@model UserProfile
+@using (Html.BeginForm())
+{
+    
+    <div>
+        @Html.OwnEditorForModel()
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary">
+    </div>
+}

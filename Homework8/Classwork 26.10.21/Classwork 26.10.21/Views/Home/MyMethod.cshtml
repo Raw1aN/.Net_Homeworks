@@ -1,0 +1,20 @@
+﻿@{
+    var userProfileType = typeof(UserProfile);
+    var properties = userProfileType.GetProperties();
+    
+}
+<table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Property Name</th>
+        <th>Property Type</th>
+    </tr>
+    </thead>
+    @foreach (var property in properties)
+    {
+        <tr>
+            <td>@property.Name</td>
+            <td>@property.PropertyType</td>
+        </tr>
+    }
+</table>
