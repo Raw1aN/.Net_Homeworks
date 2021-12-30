@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Desktop\Homework6\Giraffe\Giraffe\Giraffe.fsproj" />
+      <ProjectReference Include="D:\Classwork 26.10.21\Classwork\Classwork.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.13" />
+    </ItemGroup>
+
+</Project>
